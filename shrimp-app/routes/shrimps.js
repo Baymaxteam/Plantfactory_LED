@@ -31,7 +31,7 @@ router.put('/', function(req, res, next) {
     pythonOptions: ['-u'],
     args: ['0', '0', '0']
   };
-  PythonShell.run('ModbusControlhrimp.py', options, function (err, results) {
+  PythonShell.run('LED_PWM.py', options, function (err, results) {
     if (err) return next(err);
     // results is an array consisting of messages collected during execution
     console.log('results: %j', results);
