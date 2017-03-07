@@ -7,7 +7,7 @@ import sys
 PWM_PIN_RED = 11
 PWM_PIN_GREEN = 13
 PWM_PIN_BLUE = 15
-PWM_FREQ = 50
+PWM_FREQ = 500
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PWM_PIN_RED, GPIO.OUT)
@@ -20,6 +20,8 @@ PWM_Process_BLUE = GPIO.PWM(PWM_PIN_BLUE, PWM_FREQ)  # channel=15 frequency=50Hz
 
 # test part
 PWM_Process_RED.start(0)
+PWM_Process_GREEN.start(0)
+PWM_Process_BLUE.start(0)
 try:
     while 1:
         for dc in range(0, 101, 5):
@@ -27,11 +29,13 @@ try:
             PWM_Process_GREEN.ChangeDutyCycle(dc)
             PWM_Process_BLUE.ChangeDutyCycle(dc)
             time.sleep(0.1)
+            print("inc"+str(dc))
         for dc in range(100, -1, -5):
             PWM_Process_RED.ChangeDutyCycle(dc)
             PWM_Process_GREEN.ChangeDutyCycle(dc)
             PWM_Process_BLUE.ChangeDutyCycle(dc)
             time.sleep(0.1)
+            print("dec"+str(dc))
 except KeyboardInterrupt:
     pass
 PWM_Process_RED.stop()

@@ -65,3 +65,10 @@ http://24h.pchome.com.tw/prod/DCAS00-A82845621?q=/S/DCAS4K
 
 ## Ref
 http://yannickloriot.com/2016/04/install-mongodb-and-node-js-on-a-raspberry-pi/
+
+https://github.com/jperkin/node-rpio
+
+
+NodeJS PWM
+https://www.npmjs.com/package/pi-blaster.js
+https://www.npmjs.com/package/pi-gpio
