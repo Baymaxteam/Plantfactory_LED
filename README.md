@@ -1,8 +1,10 @@
 # Plantfactory_LED
 
 ## Environment Setup
+meain IO 
+python3 
+npm install by package json
 nodejs - 
-
 mongoDB - sudo apt-get install mongodb-server
 
 mjpg-stream - 

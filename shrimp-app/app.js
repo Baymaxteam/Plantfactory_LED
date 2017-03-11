@@ -42,8 +42,6 @@ app.use('/', index);
 //app.use('/users', users);
 
 
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
@@ -69,9 +67,9 @@ var options = {
     pythonOptions: ['-u']
 };
 PythonShell.run('Server_PWM.py', options, function(err, results) {
-    if (err) return next(err);
-    // results is an array consisting of messages collected during execution
-    console.log('results: %j', results);
+    // if (err) return next(err);
+    // // results is an array consisting of messages collected during execution
+    // console.log('results: %j', results);
 });
 console.log("Run PWM server on the background");
 // res.json(req.body);
