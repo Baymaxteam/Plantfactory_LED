@@ -7,9 +7,10 @@ client.connect(10000, '127.0.0.1', function() {
 	console.log('Connected');
 	// client.write('Hello, server! Love, Client.');
   var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]);
-	client.write(msg)
-  //client.write('#!10,20,30')
-	client.destroy();
+	//client.write(msg)
+  client.write('#!10,20,30')
+  console.log('Control: '+ msg)
+	// client.destroy();
 });
 
 client.on('data', function(data) {

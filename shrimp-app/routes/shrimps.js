@@ -19,7 +19,7 @@ var options = {
     pythonOptions: ['-u']
 };
 PythonShell.run('Server_PWM.py', options, function(err, results) {
-    if (err) return next(err);
+    if (err) throw (err);
     // // results is an array consisting of messages collected during execution
     console.log('results: %j', results);
 });
@@ -51,7 +51,8 @@ router.put('/', function(req, res, next) {
     client.connect(10000, '127.0.0.1', function() {
         console.log('Connected');
         var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]);
-        client.write(msg)
+        client.write(msg);
+        console.log("Run PWM " + msg);
         client.destroy();
     });
 
@@ -112,7 +113,8 @@ router.put('/:ID', function(req, res, next) {
             console.log('Connected');
 
             var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]);
-            client.write(msg)
+            client.write(msg);
+            console.log("Run PWM " + msg);
             client.destroy();
         });
 

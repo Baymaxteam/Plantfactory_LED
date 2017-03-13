@@ -60,18 +60,4 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-// run a background python
-var options = {
-    mode: 'text',
-    pythonPath: '/usr/bin/python3',
-    pythonOptions: ['-u']
-};
-PythonShell.run('Server_PWM.py', options, function(err, results) {
-    if (err) return next(err);
-    // // results is an array consisting of messages collected during execution
-    console.log('results: %j', results);
-});
-console.log("Run PWM server on the background");
-// res.json(req.body);
-
 module.exports = app;
