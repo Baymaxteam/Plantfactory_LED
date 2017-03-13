@@ -39,7 +39,7 @@ $.get("/shrimps", function(data) {
                 url: '/shrimps/' + setting.ID,
                 type: 'PUT',
                 success: function(result) {
-                    $("#console_text").html("<p>Shrimp Brand: " + setting.NAME + " capturing!</p>");
+                    $("#console_text").html("<p>LED Control: " + setting.NAME + " On!</p>");
                 }
             });
         });
@@ -53,7 +53,7 @@ $("#Stop_button").click(function() {
         url: '/shrimps',
         type: 'PUT',
         success: function(result) {
-            $("#console_text").html("<p>Motors stop!</p>");
+            $("#console_text").html("<p>LED Close!</p>");
         }
     });
 });
