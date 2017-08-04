@@ -10,7 +10,7 @@ var PythonShell = require('python-shell');
 // In background, a socket server receive the motor control comment. Server_PWM.py
 var net = require('net');
 var client = new net.Socket();
-var PWM_Commend = [0, 0, 0];
+var PWM_Commend = [0, 0, 0, 0, 0, 0];
 
 // run a background python
 var options = {
@@ -48,10 +48,14 @@ router.put('/', function(req, res, next) {
     PWM_Commend[0] = 0;
     PWM_Commend[1] = 0;
     PWM_Commend[2] = 0;
+    PWM_Commend[3] = 0;
+    PWM_Commend[4] = 0;
+    PWM_Commend[5] = 0;
+
     client.connect(10000, '127.0.0.1', function() {
         console.log('Connected');
-        var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]);
-        client.write(msg);
+        var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]) + ',' + String(PWM_Commend[3] + ',' + String(PWM_Commend[4] + ',' + String(PWM_Commend[5]) ;
+        client.write(msg);  
         console.log("Run PWM " + msg);
         client.destroy();
     });
@@ -67,19 +71,6 @@ router.put('/', function(req, res, next) {
 
     console.log("Receive PUT: STOP LED");
     res.json(req.body);
-    // var options = {
-    //   mode: 'text',
-    //   pythonPath: '/usr/bin/python3',
-    //   pythonOptions: ['-u'],
-    //   args: ['0', '0', '0']
-    // };
-    // PythonShell.run('LED_PWM.py', options, function (err, results) {
-    //   if (err) return next(err);
-    //   // results is an array consisting of messages collected during execution
-    //   console.log('results: %j', results);
-    // });
-    // console.log("Receive PUT: STOP MOTOR");
-    // res.json(req.body);
 });
 
 /* Delete /shrimps delete all */
@@ -108,11 +99,14 @@ router.put('/:ID', function(req, res, next) {
         PWM_Commend[0] = post[0].Motor1;
         PWM_Commend[1] = post[0].Motor2;
         PWM_Commend[2] = post[0].Motor3;
+        PWM_Commend[0] = post[0].Motor4;
+        PWM_Commend[1] = post[0].Motor5;
+        PWM_Commend[2] = post[0].Motor6;
 
         client.connect(10000, '127.0.0.1', function() {
             console.log('Connected');
 
-            var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]);
+            var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]) + ',' + String(PWM_Commend[3] + ',' + String(PWM_Commend[4] + ',' + String(PWM_Commend[5]) ;
             client.write(msg);
             console.log("Run PWM " + msg);
             client.destroy();
@@ -130,26 +124,6 @@ router.put('/:ID', function(req, res, next) {
         res.json(post);
         //console.log("Receive PUT:"+post);
     });
-    // Shrimp.find({ ID: req.params.ID }, function(err, post) {
-    //     console.log("Receive PUT - ID=" + req.params.ID);
-    //     if (err) return next(err);
-    //     var options = {
-    //         mode: 'text',
-    //         pythonPath: '/usr/bin/python3',
-    //         pythonOptions: ['-u'],
-    //         args: [post[0].Motor1, post[0].Motor2, post[0].Motor3]
-    //     };
-    //     //console.log(post);
-    //     //console.log([post[0].Motor1, post[0].Motor2, post[0].Motor3]);
-    //     PythonShell.run('ModbusControlhrimp.py', options, function(err, results) {
-    //         if (err) return next(err);
-    //         // results is an array consisting of messages collected during execution
-    //         console.log('results: %j', results);
-    //     });
-
-    //     res.json(post);
-    //     //console.log("Receive PUT:"+post);
-    // });
 });
 
 /* DELETE /shrimps/:ID */

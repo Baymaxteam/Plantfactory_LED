@@ -8,6 +8,9 @@ var ShrimpSchema = new mongoose.Schema({
   Motor1: { type: Number, min: 0, max: 100 , required: true},
   Motor2: { type: Number, min: 0, max: 100 , required: true},
   Motor3: { type: Number, min: 0, max: 100 , required: true},
+  Motor4: { type: Number, min: 0, max: 100 , required: true},
+  Motor5: { type: Number, min: 0, max: 100 , required: true},
+  Motor6: { type: Number, min: 0, max: 100 , required: true},
 });
 
 ShrimpSchema.set('toJSON', {
