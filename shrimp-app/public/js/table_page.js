@@ -23,7 +23,7 @@ var options = {
 };
 
 $("#dataTable").jsonTable({
-    head: ['No.', 'Type', 'Red1', 'Blue1', 'Green1', 'Red2', 'Blue2', 'Green2',, 'Delete'], // Goes on the <thead>
+    head: ['No.', 'Type', 'R1', 'B1', 'G1', 'R2', 'B2', 'G2', 'Delete'], // Goes on the <thead>
     json: ['ID', 'NAME', 'Motor1', 'Motor2', 'Motor3','Motor4', 'Motor5', 'Motor6'] //json identities from the loaded json object
 });
 
