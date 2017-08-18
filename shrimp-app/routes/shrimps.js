@@ -99,9 +99,9 @@ router.put('/:ID', function(req, res, next) {
         PWM_Commend[0] = post[0].Motor1;
         PWM_Commend[1] = post[0].Motor2;
         PWM_Commend[2] = post[0].Motor3;
-        PWM_Commend[0] = post[0].Motor4;
-        PWM_Commend[1] = post[0].Motor5;
-        PWM_Commend[2] = post[0].Motor6;
+        PWM_Commend[3] = post[0].Motor4;
+        PWM_Commend[4] = post[0].Motor5;
+        PWM_Commend[5] = post[0].Motor6;
 
         client.connect(10000, '127.0.0.1', function() {
             console.log('Connected');

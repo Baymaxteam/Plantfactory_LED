@@ -75,7 +75,7 @@ while True:
 		# Receive the data in small chunks and retransmit it
 		bufferdata = ""
 		while True:
-			data = connection.recv(16).decode("utf-8")
+			data = connection.recv(16 + 15).decode("utf-8") # add more 3 pwm commend in this msg
 			print(sys.stderr, 'received "%s"' % data)
 			# print(data[0:2])
 			if data[0:2]=='#!':
