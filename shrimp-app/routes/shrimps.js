@@ -54,7 +54,7 @@ router.put('/', function(req, res, next) {
 
     client.connect(10000, '127.0.0.1', function() {
         console.log('Connected');
-        var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]) + ',' + String(PWM_Commend[3] + ',' + String(PWM_Commend[4] + ',' + String(PWM_Commend[5]) ;
+        var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]) + ',' + String(PWM_Commend[3]) + ',' + String(PWM_Commend[4]) + ',' + String(PWM_Commend[5]) ;
         client.write(msg);  
         console.log("Run PWM " + msg);
         client.destroy();
@@ -106,7 +106,7 @@ router.put('/:ID', function(req, res, next) {
         client.connect(10000, '127.0.0.1', function() {
             console.log('Connected');
 
-            var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]) + ',' + String(PWM_Commend[3] + ',' + String(PWM_Commend[4] + ',' + String(PWM_Commend[5]) ;
+            var msg = '#!' + String(PWM_Commend[0]) + ',' + String(PWM_Commend[1]) + ',' + String(PWM_Commend[2]) + ',' + String(PWM_Commend[3]) + ',' + String(PWM_Commend[4]) + ',' + String(PWM_Commend[5]) ;
             client.write(msg);
             console.log("Run PWM " + msg);
             client.destroy();

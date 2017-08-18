@@ -24,9 +24,9 @@ GPIO.setup(PWM_PIN_BLUE_B2, GPIO.OUT)
 PWM_Process_RED_B1 = GPIO.PWM(PWM_PIN_RED_B1, PWM_FREQ)  # channel=11 frequency=50Hz
 PWM_Process_GREEN_B1 = GPIO.PWM(PWM_PIN_GREEN_B1, PWM_FREQ)  # channel=13 frequency=50Hz
 PWM_Process_BLUE_B1 = GPIO.PWM(PWM_PIN_BLUE_B1, PWM_FREQ)  # channel=15 frequency=50Hz
-PWM_Process_RED_B1 = GPIO.PWM(PWM_PIN_RED_B2, PWM_FREQ)  # channel=19 frequency=50Hz
-PWM_Process_GREEN_B1 = GPIO.PWM(PWM_PIN_GREEN_B2, PWM_FREQ)  # channel=21 frequency=50Hz
-PWM_Process_BLUE_B1 = GPIO.PWM(PWM_PIN_BLUE_B2, PWM_FREQ)  # channel=23 frequency=50Hz
+PWM_Process_RED_B2 = GPIO.PWM(PWM_PIN_RED_B2, PWM_FREQ)  # channel=19 frequency=50Hz
+PWM_Process_GREEN_B2 = GPIO.PWM(PWM_PIN_GREEN_B2, PWM_FREQ)  # channel=21 frequency=50Hz
+PWM_Process_BLUE_B2 = GPIO.PWM(PWM_PIN_BLUE_B2, PWM_FREQ)  # channel=23 frequency=50Hz
 
 # stat PWM with 0 % output
 PWM_Process_RED_B1.start(0)
